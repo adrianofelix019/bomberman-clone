@@ -27,7 +27,6 @@ func place_bomb() -> void:
 	
 	if Input.is_action_just_pressed("place_bomb"):
 		boombs_coords.append(boomb_coords)
-		print(boombs_coords)
 		var bomb := bomb_tscn.instantiate()
 		bomb.global_position = $"../TileMapLayer".map_to_local(boomb_coords)
 		get_parent().add_child(bomb)

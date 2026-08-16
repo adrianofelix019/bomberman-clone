@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dpykig445qcnv"]
+
+[ext_resource type="Texture2D" uid="uid://cru14qlh6m16c" path="res://assets/temp/explosion.png" id="1_17npe"]
+[ext_resource type="Script" uid="uid://pmxl177soyh6" path="res://scripts/explosion.gd" id="1_nfeox"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
+size = Vector2(16, 16)
+
+[node name="Explosion" type="Area2D" unique_id=1409380244]
+script = ExtResource("1_nfeox")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1333641113]
+texture = ExtResource("1_17npe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1705780858]
+shape = SubResource("RectangleShape2D_ec6vt")
+
+[node name="Timer" type="Timer" parent="." unique_id=1902121334]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
