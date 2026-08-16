@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dwgkcn1q65034"]
+
+[ext_resource type="Script" uid="uid://b51lccwe4f245" path="res://scripts/character_body_2d.gd" id="1_6id5c"]
+[ext_resource type="Texture2D" uid="uid://cn3sto06ti3at" path="res://assets/temp/char.png" id="2_8tdku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
+size = Vector2(8, 13)
+
+[node name="BomberGuy" type="CharacterBody2D" unique_id=421491110]
+script = ExtResource("1_6id5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102614886]
+position = Vector2(2.9802322e-08, -0.50000006)
+scale = Vector2(0.49999997, 0.81249994)
+texture = ExtResource("2_8tdku")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1432681212]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_ec6vt")

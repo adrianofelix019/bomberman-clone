@@ -1,0 +1,27 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Arquivos temporários
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# Arquivos de sistema/editor
+.DS_Store
+Thumbs.db
+
+# Configurações pessoais de IDE
+.vscode/
+.idea/
+
+# Builds/exportações locais
+/build/
+/dist/
+/export/
+
+# Arquivos de backup
+*.bak
+*.backup

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bxdcjqs70ttos"]
+
+[ext_resource type="Texture2D" uid="uid://m3ilnnmcslwx" path="res://assets/temp/bomb.png" id="1_4kkau"]
+[ext_resource type="Script" uid="uid://dee56dkkmgv5o" path="res://scripts/bomb.gd" id="1_vpdcx"]
+
+[node name="Bomb" type="Node2D" unique_id=1625723661]
+script = ExtResource("1_vpdcx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=878044486]
+z_index = 1
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("1_4kkau")
+
+[node name="Timer" type="Timer" parent="." unique_id=1146152396]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
