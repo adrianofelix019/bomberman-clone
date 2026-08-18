@@ -35,7 +35,6 @@ func create_explosion_at(cell: Vector2i) -> void:
 	var new_explosion_position = $"../TileMapLayer".map_to_local(cell)
 	var new_explosion = EXPLOSION_SCENE.instantiate()
 	new_explosion.position = new_explosion_position
-	print("criando explosão em", new_explosion_position)
 	get_parent().add_child(new_explosion)
 
 
