@@ -161,3 +161,9 @@ func get_cell_top_edge() -> float:
 
 func get_cell_bottom_edge() -> float:
 	return get_current_cell_center().y + 8
+
+
+func die():
+	print("You died!")
+	set_physics_process(false)
+	queue_free()

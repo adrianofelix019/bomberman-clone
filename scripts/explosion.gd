@@ -43,3 +43,8 @@ func create_explosion_at(cell: Vector2i) -> void:
 func _on_timer_timeout() -> void:
 	$"../BomberGuy".bombs_coords.pop_front()
 	queue_free()
+
+
+func _on_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		body.die()
