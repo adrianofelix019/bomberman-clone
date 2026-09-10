@@ -11,4 +11,5 @@ func explode() -> void:
 
 func _on_timer_timeout() -> void:
 	explode()
+	$"../BomberGuy".bombs_coords.pop_front()
 	queue_free()
