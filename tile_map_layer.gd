@@ -1,6 +1,9 @@
+class_name GameMap
 extends TileMapLayer
 
+const BREAKABLE_SOURCE_ID := 3
 const BREAKABLE_TILE := Vector2i(0, 0)
+const UNBREAKABLE_TILES_SOURCE_ID := [0, 1]
 const MAP_WIDTH := 18
 const MAP_HEIGHT := 16
 const BREAK_AMOUNT := 35
@@ -28,7 +31,7 @@ func generate_breakable_blocks() -> void:
 	
 	var amount = min(BREAK_AMOUNT, possible_cells.size())
 	for i in range(amount):
-		set_cell(possible_cells[i], 3, BREAKABLE_TILE)
+		set_cell(possible_cells[i], BREAKABLE_SOURCE_ID, BREAKABLE_TILE)
 
 
 func is_player_spawn_area(cell: Vector2i) -> bool:
@@ -39,3 +42,15 @@ func is_player_spawn_area(cell: Vector2i) -> bool:
 		or cell == spawn + Vector2i.RIGHT
 		or cell == spawn + Vector2i.LEFT
 	)
+
+
+func destroy_breakable_block(cell: Vector2i) -> bool:
+	var source_id := get_cell_source_id(cell)
+	if source_id in UNBREAKABLE_TILES_SOURCE_ID:
+		return false
+	set_cell(
+		cell,
+		0, # ground
+		Vector2i.ZERO
+	)
+	return true

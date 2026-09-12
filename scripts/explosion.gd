@@ -4,7 +4,7 @@ extends Area2D
 const RANGE := 2
 const EXPLOSION_SCENE = preload("res://scenes/explosion.tscn")
 
-@onready var tile_map: TileMapLayer = $"../TileMapLayer"
+@onready var tile_map: GameMap = $"../TileMapLayer"
 
 
 func expand() -> void:
@@ -26,11 +26,13 @@ func expand_explosion(origin: Vector2, direction: Vector2) -> void:
 		if is_cell_blocked(cell):
 			break
 		create_explosion_at(cell)
+		if tile_map.destroy_breakable_block(cell):
+			break
 
 
 func is_cell_blocked(cell: Vector2i) -> bool:
 	var source_id = tile_map.get_cell_source_id(cell)
-	return source_id != 0
+	return source_id == 1
 
 
 func create_explosion_at(cell: Vector2i) -> void:
