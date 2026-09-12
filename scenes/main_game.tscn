@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cupc74ivt3x7a" path="res://tile_map_layer.gd" id="5_ipu61"]
 [ext_resource type="Texture2D" uid="uid://dgaebqqnf76u5" path="res://assets/temp/breakable.png" id="5_ygxny"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0rdsr"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygxny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72e8q"]
 texture = ExtResource("1_s3esy")
@@ -28,10 +28,11 @@ texture = ExtResource("3_0rdsr")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wi4c7"]
 texture = ExtResource("5_ygxny")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSet" id="TileSet_ec6vt"]
 physics_layer_0/collision_layer = 1
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_0rdsr")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_ygxny")
 sources/0 = SubResource("TileSetAtlasSource_72e8q")
 sources/1 = SubResource("TileSetAtlasSource_ipu61")
 sources/2 = SubResource("TileSetAtlasSource_ygxny")

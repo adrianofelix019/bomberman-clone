@@ -2,6 +2,7 @@ class_name GameMap
 extends TileMapLayer
 
 const BREAKABLE_SOURCE_ID := 3
+const GROUND_SOURCE_ID := 0
 const BREAKABLE_TILE := Vector2i(0, 0)
 const UNBREAKABLE_TILES_SOURCE_ID := [0, 1]
 const MAP_WIDTH := 18
@@ -50,7 +51,7 @@ func destroy_breakable_block(cell: Vector2i) -> bool:
 		return false
 	set_cell(
 		cell,
-		0, # ground
+		GROUND_SOURCE_ID,
 		Vector2i.ZERO
 	)
 	return true

@@ -9,7 +9,6 @@ script = ExtResource("1_vpdcx")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=878044486]
 z_index = 1
 position = Vector2(4.7683716e-07, 4.7683716e-07)
-scale = Vector2(1.25, 1.25)
 texture = ExtResource("1_4kkau")
 
 [node name="Timer" type="Timer" parent="." unique_id=1146152396]
