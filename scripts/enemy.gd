@@ -32,7 +32,18 @@ func _physics_process(_delta: float) -> void:
 
 
 func is_cell_free(cell: Vector2i) -> bool:
-	return tile_map.get_cell_source_id(cell) == 0
+	if tile_map.get_cell_source_id(cell) != 0:
+		return false
+	
+	for bomb in get_tree().get_nodes_in_group("bombs"):
+		var bomb_cell := tile_map.local_to_map(
+			tile_map.to_local(bomb.global_position)
+		)
+
+		if bomb_cell == cell:
+			return false
+	
+	return true
 
 
 func choose_next_cell() -> void:

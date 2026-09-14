@@ -6,7 +6,7 @@
 [node name="Bomb" type="Node2D" unique_id=1625723661 groups=["bombs"]]
 script = ExtResource("1_vpdcx")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=878044486]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=878044486 groups=["bombs"]]
 z_index = 1
 position = Vector2(4.7683716e-07, 4.7683716e-07)
 texture = ExtResource("1_4kkau")
