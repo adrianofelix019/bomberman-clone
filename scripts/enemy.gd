@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED := 40
+const SPEED := 20
 @onready var tile_map: TileMapLayer = $"../TileMapLayer"
 var current_cell: Vector2i
 var target_cell: Vector2i
@@ -48,22 +48,15 @@ func choose_next_cell() -> void:
 	for direction: Vector2i in directions:
 		var next_cell := current_cell + direction
 		
-		print(
-			"Testando ",
-			next_cell,
-			" | source_id: ",
-			tile_map.get_cell_source_id(next_cell),
-			" | livre: ",
-			is_cell_free(next_cell)
-		)
-		
 		if is_cell_free(next_cell):
 			target_cell = next_cell
-			print(">>> NOVO TARGET: ", target_cell)
 			return
-	
-	print("!!! NENHUMA CÉLULA LIVRE !!!")
 
 
 func die() -> void:
 	queue_free()
+
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		body.die()

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
 size = Vector2(8, 13)
 
-[node name="BomberGuy" type="CharacterBody2D" unique_id=421491110]
+[node name="BomberGuy" type="CharacterBody2D" unique_id=421491110 groups=["player"]]
 script = ExtResource("1_6id5c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102614886]
@@ -17,5 +17,3 @@ texture = ExtResource("2_8tdku")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1432681212]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ec6vt")
-
-[connection signal="player_moved" from="." to="." method="_on_player_moved"]

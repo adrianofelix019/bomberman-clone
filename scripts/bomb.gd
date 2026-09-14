@@ -1,6 +1,9 @@
 extends Node2D
 
 
+@onready var bomber_guy := $"../BomberGuy"
+
+
 func explode() -> void:
 	var explosion := preload("res://scenes/explosion.tscn")
 	var explosion_instance := explosion.instantiate()
@@ -11,5 +14,6 @@ func explode() -> void:
 
 func _on_timer_timeout() -> void:
 	explode()
-	$"../BomberGuy".bombs_coords.pop_front()
+	if is_instance_valid(bomber_guy):
+		bomber_guy.bombs_coords.pop_front()
 	queue_free()
