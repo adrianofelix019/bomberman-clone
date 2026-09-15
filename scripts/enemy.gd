@@ -23,9 +23,11 @@ func _physics_process(_delta: float) -> void:
 	if global_position.distance_to(target_position) < 1.0:
 		current_cell = target_cell
 		choose_next_cell()
+
 	target_position = tile_map.to_global(
 		tile_map.map_to_local(target_cell)
 	)
+
 	var direction := global_position.direction_to(target_position)
 	velocity = direction * SPEED
 	move_and_slide()
