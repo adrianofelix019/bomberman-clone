@@ -43,8 +43,6 @@ func create_explosion_at(cell: Vector2i) -> void:
 
 
 func _on_timer_timeout() -> void:
-	if is_instance_valid($"../BomberGuy"):
-		$"../BomberGuy".bombs_coords.pop_front()
 	queue_free()
 
 

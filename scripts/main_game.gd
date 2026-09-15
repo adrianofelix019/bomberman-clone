@@ -3,11 +3,13 @@ extends Node2D
 
 @onready var tile_map: TileMapLayer = $TileMapLayer
 var enemy_cells: Array[Vector2i] = []
+var player_cell := Vector2i(1, 1)
 
 var bomber_guy_scene := preload("res://scenes/bomber_guy.tscn")
 var enemy_scene := preload("res://scenes/enemy.tscn")
 
 const ENEMY_COUNT := 5
+const MIN_ENEMY_DISTANCE := 3
 
 
 func _ready() -> void:
@@ -18,10 +20,8 @@ func _ready() -> void:
 func spawn_bomber_guy() -> void:
 	var bomber_guy := bomber_guy_scene.instantiate()
 
-	var first_cell := Vector2i(1, 1)
-
 	bomber_guy.global_position = tile_map.to_global(
-		tile_map.map_to_local(first_cell)
+		tile_map.map_to_local(player_cell)
 	)
 
 	add_child(bomber_guy)
@@ -59,10 +59,19 @@ func get_random_free_cell() -> Vector2i:
 		
 		cell = Vector2i(x, y)
 		
-		if cell in enemy_cells:
+		if tile_map.get_cell_source_id(cell) != 0:
 			continue
 		
-		if tile_map.get_cell_source_id(cell) == 0:
+		var distance = abs(cell.x - player_cell.x) + abs(cell.y - player_cell.y)
+		
+		if distance <= MIN_ENEMY_DISTANCE:
+			continue
+		
+		if cell in enemy_cells:
+			continue
+		else:
+			enemy_cells.append(cell)
 			break
+		
 	
 	return cell
