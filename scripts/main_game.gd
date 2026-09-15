@@ -72,6 +72,5 @@ func get_random_free_cell() -> Vector2i:
 		else:
 			enemy_cells.append(cell)
 			break
-		
-	
+
 	return cell
