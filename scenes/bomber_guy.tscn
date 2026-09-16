@@ -9,7 +9,7 @@ size = Vector2(8, 13)
 [node name="BomberGuy" type="CharacterBody2D" unique_id=421491110 groups=["player"]]
 z_index = 2
 collision_layer = 2
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_6id5c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102614886]

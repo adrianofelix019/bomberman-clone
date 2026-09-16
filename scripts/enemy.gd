@@ -16,9 +16,11 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	var target_position := tile_map.to_global(
-		tile_map.map_to_local(target_cell)
-	)
+	var target_position := get_target_position()
+	
+	if not is_cell_free(target_cell):
+		target_cell = current_cell
+		choose_next_cell()
 	
 	if global_position.distance_to(target_position) < 1.0:
 		current_cell = target_cell
@@ -64,6 +66,11 @@ func choose_next_cell() -> void:
 		if is_cell_free(next_cell):
 			target_cell = next_cell
 			return
+
+
+func get_target_position() -> Vector2:
+	var local_position := tile_map.map_to_local(target_cell)
+	return tile_map.to_global(local_position)
 
 
 func die() -> void:
