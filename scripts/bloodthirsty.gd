@@ -38,7 +38,7 @@ func _physics_process(_delta):
 
 func choose_next_cell() -> Vector2i:
 	if not is_instance_valid(player):
-		Vector2i.ZERO
+		return Vector2i.ZERO
 	
 	var player_cell := tile_map.local_to_map(
 		tile_map.to_local(player.global_position)
@@ -50,31 +50,6 @@ func choose_next_cell() -> Vector2i:
 		return path[1]
 	
 	return current_cell
-	#var possible_cells := [
-		#current_cell + Vector2i.RIGHT,
-		#current_cell + Vector2i.LEFT,
-		#current_cell + Vector2i.UP,
-		#current_cell + Vector2i.DOWN
-	#]
-	#
-	#var player_cell := tile_map.local_to_map(
-		#tile_map.to_local(player.global_position)
-	#)
-	#
-	#var best_cell := current_cell
-	#var best_distance := INF
-	#
-	#for cell: Vector2i in possible_cells:
-		#if not is_cell_free(cell):
-			#continue
-		#
-		#var distance := cell.distance_to(player_cell)
-		#
-		#if distance < best_distance:
-			#best_distance = distance
-			#best_cell = cell
-	#
-	#return best_cell
 
 
 func find_path(start: Vector2i, goal: Vector2i) -> Array[Vector2i]:
