@@ -37,7 +37,7 @@ func _physics_process(_delta):
 
 
 func choose_next_cell() -> Vector2i:
-	if is_instance_valid(player):
+	if not is_instance_valid(player):
 		Vector2i.ZERO
 	
 	var player_cell := tile_map.local_to_map(
