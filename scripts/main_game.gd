@@ -8,6 +8,7 @@ var player_cell := Vector2i(1, 1)
 var bomber_guy_scene := preload("res://scenes/bomber_guy.tscn")
 var enemy_scene := preload("res://scenes/enemy.tscn")
 var bloodthirsty_scene := preload("res://scenes/bloodthirsty.tscn")
+var smart_enemy_scene := preload("res://scenes/smart_enemy.tscn")
 
 const ENEMY_COUNT := 5
 const MIN_ENEMY_DISTANCE := 3
@@ -16,6 +17,7 @@ const MIN_ENEMY_DISTANCE := 3
 func _ready() -> void:
 	spawn_bomber_guy()
 	spawn_enemy()
+	spawn_smart()
 
 
 func spawn_bomber_guy() -> void:
@@ -53,6 +55,17 @@ func spawn_bloodthirsty() -> void:
 	)
 	
 	add_child(bloodthirsty)
+
+
+func spawn_smart() -> void:
+	var smart_enemy: CharacterBody2D = smart_enemy_scene.instantiate()
+	var random_cell := get_random_free_cell()
+	
+	smart_enemy.global_position = tile_map.to_global(
+		tile_map.map_to_local(random_cell)
+	)
+	
+	add_child(smart_enemy)
 
 
 func get_random_free_cell() -> Vector2i:

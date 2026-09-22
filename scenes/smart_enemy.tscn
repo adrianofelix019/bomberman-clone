@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://2cvna8xp2rhu"]
+
+[ext_resource type="Script" uid="uid://xtwje0vswj7k" path="res://scripts/smart_enemy.gd" id="1_8hkkv"]
+[ext_resource type="Texture2D" uid="uid://dkvd3kvgqka52" path="res://assets/temp/smart-enemy.png" id="2_gpm15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
+size = Vector2(14, 14)
+
+[node name="SmartEnemy" type="CharacterBody2D" unique_id=1574171582]
+collision_layer = 4
+collision_mask = 9
+script = ExtResource("1_8hkkv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1080115286]
+texture = ExtResource("2_gpm15")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=804125080]
+shape = SubResource("RectangleShape2D_ec6vt")

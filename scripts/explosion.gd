@@ -3,36 +3,19 @@ extends Area2D
 
 const RANGE := 2
 const EXPLOSION_SCENE = preload("res://scenes/explosion.tscn")
+const BREAKABLE_SOURCE_ID = 3
 
 @onready var tile_map: GameMap = $"../TileMapLayer"
 
 
 func expand() -> void:
 	var origin = tile_map.local_to_map(position)
-	var directions = [
-		Vector2i.UP,
-		Vector2i.DOWN,
-		Vector2i.LEFT,
-		Vector2i.RIGHT
-	]
-
-	for direction in directions:
-		expand_explosion(origin, direction)
-
-
-func expand_explosion(origin: Vector2, direction: Vector2) -> void:
-	for i in range(RANGE):
-		var cell := origin + direction * i
-		if is_cell_blocked(cell):
-			break
+	var explosion_cells := tile_map.get_explosion_cells(origin)
+	
+	for cell in explosion_cells:
 		create_explosion_at(cell)
-		if tile_map.destroy_breakable_block(cell):
-			break
-
-
-func is_cell_blocked(cell: Vector2i) -> bool:
-	var source_id = tile_map.get_cell_source_id(cell)
-	return source_id == 1
+		if tile_map.get_cell_source_id(cell) == BREAKABLE_SOURCE_ID:
+			tile_map.destroy_breakable_block(cell)
 
 
 func create_explosion_at(cell: Vector2i) -> void:
