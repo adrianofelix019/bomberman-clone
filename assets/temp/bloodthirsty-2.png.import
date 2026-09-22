@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdy6ygaa8yshl"
-path="res://.godot/imported/bloodthirsty.png-609690de0c2b655495f21d2978f68c42.ctex"
+uid="uid://buul5k6d7pwf2"
+path="res://.godot/imported/bloodthirsty-2.png-6a7c0694f00f1ae3b126042227e01147.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/bloodthirsty.png"
-dest_files=["res://.godot/imported/bloodthirsty.png-609690de0c2b655495f21d2978f68c42.ctex"]
+source_file="res://assets/temp/bloodthirsty-2.png"
+dest_files=["res://.godot/imported/bloodthirsty-2.png-6a7c0694f00f1ae3b126042227e01147.ctex"]
 
 [params]
 

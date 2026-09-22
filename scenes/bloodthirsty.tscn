@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kby0pm8lp5fl"]
 
-[ext_resource type="Texture2D" uid="uid://bdy6ygaa8yshl" path="res://assets/temp/bloodthirsty.png" id="1_6eokd"]
 [ext_resource type="Script" uid="uid://btp8vtuvts5po" path="res://scripts/bloodthirsty.gd" id="1_og67a"]
+[ext_resource type="Texture2D" uid="uid://buul5k6d7pwf2" path="res://assets/temp/bloodthirsty-2.png" id="2_og67a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
 size = Vector2(12, 11)
@@ -12,7 +12,7 @@ collision_mask = 9
 script = ExtResource("1_og67a")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=389822927]
-texture = ExtResource("1_6eokd")
+texture = ExtResource("2_og67a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1830765112]
 position = Vector2(0, -0.5)
