@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dkvd3kvgqka52"
-path="res://.godot/imported/smart-enemy.png-959fd03f1de71b925d1ffc1daaf05c1a.ctex"
+uid="uid://cimgqtd2jbxyi"
+path="res://.godot/imported/smart-enemy-2.png-9c73f71ccdc9ba8b4b07f172d29e9452.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/smart-enemy.png"
-dest_files=["res://.godot/imported/smart-enemy.png-959fd03f1de71b925d1ffc1daaf05c1a.ctex"]
+source_file="res://assets/temp/smart-enemy-2.png"
+dest_files=["res://.godot/imported/smart-enemy-2.png-9c73f71ccdc9ba8b4b07f172d29e9452.ctex"]
 
 [params]
 
