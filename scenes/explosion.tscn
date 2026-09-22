@@ -18,6 +18,7 @@ texture = ExtResource("1_17npe")
 shape = SubResource("RectangleShape2D_ec6vt")
 
 [node name="Timer" type="Timer" parent="." unique_id=1902121334]
+wait_time = 0.6
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
