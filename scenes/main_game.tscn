@@ -1,23 +1,23 @@
 [gd_scene format=4 uid="uid://c06547vlhly7c"]
 
 [ext_resource type="Script" uid="uid://cgybyj7pnfsl6" path="res://scripts/main_game.gd" id="1_ipu61"]
-[ext_resource type="Texture2D" uid="uid://dalu2ce7c7dt6" path="res://assets/temp/background.png" id="1_s3esy"]
-[ext_resource type="Texture2D" uid="uid://dgvhl16klutwr" path="res://assets/temp/walls.png" id="2_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://bmjiko5s0msx1" path="res://assets/temp/ground-2.png" id="2_ygxny"]
 [ext_resource type="Texture2D" uid="uid://m3ilnnmcslwx" path="res://assets/temp/bomb.png" id="3_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://cwdl278ltaifj" path="res://assets/temp/unbreakable.png" id="3_ygxny"]
 [ext_resource type="Script" uid="uid://cupc74ivt3x7a" path="res://tile_map_layer.gd" id="5_ipu61"]
 [ext_resource type="Texture2D" uid="uid://dgaebqqnf76u5" path="res://assets/temp/breakable.png" id="5_ygxny"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygxny"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72e8q"]
-texture = ExtResource("1_s3esy")
+texture = ExtResource("2_ygxny")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ipu61"]
-texture = ExtResource("2_0rdsr")
+texture = ExtResource("3_ygxny")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
