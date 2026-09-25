@@ -13,9 +13,13 @@ func expand() -> void:
 	var explosion_cells := tile_map.get_explosion_cells(origin)
 	
 	for cell in explosion_cells:
-		create_explosion_at(cell)
-		if tile_map.get_cell_source_id(cell) == BREAKABLE_SOURCE_ID:
+		var tile_source_id := tile_map.get_cell_source_id(cell)
+		#create_explosion_at(cell)
+		if tile_source_id == BREAKABLE_SOURCE_ID:
 			tile_map.destroy_breakable_block(cell)
+			continue
+		
+		create_explosion_at(cell)
 
 
 func create_explosion_at(cell: Vector2i) -> void:

@@ -54,14 +54,17 @@ func is_player_spawn_area(cell: Vector2i) -> bool:
 
 
 func destroy_breakable_block(cell: Vector2i) -> bool:
-	var source_id := get_cell_source_id(cell)
-	if source_id == UNBREAKABLE_TILE_SOURCE_ID:
+	var cell_source_id := get_cell_source_id(cell)
+	
+	if cell_source_id != BREAKABLE_SOURCE_ID:
 		return false
+	
 	set_cell(
 		cell,
 		GROUND_SOURCE_ID,
 		Vector2i.ZERO
 	)
+	
 	return true
 
 
@@ -79,6 +82,7 @@ func get_explosion_cells(origin: Vector2i) -> Array[Vector2i]:
 			
 			if get_cell_source_id(cell) == BREAKABLE_SOURCE_ID:
 				break
+	
 	return explosions_cells
 
 
