@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dyhpfmlkxk4a6"]
+
+[ext_resource type="Script" uid="uid://jy121ityrhnf" path="res://scripts/burning_bush.gd" id="1_k2bnv"]
+[ext_resource type="Texture2D" uid="uid://i18apw6bufq" path="res://assets/temp/bush-on-fire.png" id="1_xh22d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
+size = Vector2(16, 16)
+
+[node name="BurningBush" type="Area2D" unique_id=1593990528]
+collision_mask = 0
+script = ExtResource("1_k2bnv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=844372915]
+shape = SubResource("RectangleShape2D_ec6vt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1644543704]
+texture = ExtResource("1_xh22d")
+
+[node name="Timer" type="Timer" parent="." unique_id=1107756877]
+wait_time = 0.4
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

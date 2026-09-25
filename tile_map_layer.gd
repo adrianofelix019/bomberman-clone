@@ -1,6 +1,7 @@
 class_name GameMap
 extends TileMapLayer
 
+const BUSH_ON_FIRE_SOURCE_ID := 4
 const BREAKABLE_SOURCE_ID := 3
 const GROUND_SOURCE_ID := 0
 const BREAKABLE_TILE := Vector2i(0, 0)
@@ -16,6 +17,7 @@ const DIRECTIONS := [
 ]
 
 var explosion_range := 2
+@onready var burning_bush_tscn = preload("res://scenes/burning_bush.tscn")
 
 
 func _ready() -> void:
@@ -59,6 +61,8 @@ func destroy_breakable_block(cell: Vector2i) -> bool:
 	if cell_source_id != BREAKABLE_SOURCE_ID:
 		return false
 	
+	set_bush_on_fire(cell)
+	
 	set_cell(
 		cell,
 		GROUND_SOURCE_ID,
@@ -88,3 +92,19 @@ func get_explosion_cells(origin: Vector2i) -> Array[Vector2i]:
 
 func is_explosion_blocked(cell: Vector2i) -> bool:
 	return get_cell_source_id(cell) == UNBREAKABLE_TILE_SOURCE_ID
+
+
+func set_bush_on_fire(cell: Vector2i) -> void:
+	var fire_bush: Area2D = burning_bush_tscn.instantiate()
+	
+	fire_bush.global_position = to_global(
+		map_to_local(cell)
+	)
+		
+	#set_cell(
+		#cell,
+		#GROUND_SOURCE_ID,
+		#Vector2i.ZERO
+	#)
+	get_parent().add_child(fire_bush)
+	
