@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://dpykig445qcnv"]
 
 [ext_resource type="Script" uid="uid://pmxl177soyh6" path="res://scripts/explosion.gd" id="1_nfeox"]
+[ext_resource type="Texture2D" uid="uid://bv8y1ph8kpx15" path="res://assets/temp/fire-center.png" id="2_aw4cw"]
 [ext_resource type="Texture2D" uid="uid://bb7f5p2ksq1u3" path="res://assets/temp/fire.png" id="2_nfeox"]
+[ext_resource type="Texture2D" uid="uid://e467gi17gabr" path="res://assets/temp/fire-tip-right.png" id="4_3el85"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
 size = Vector2(16, 16)
@@ -10,6 +12,9 @@ size = Vector2(16, 16)
 collision_layer = 0
 collision_mask = 6
 script = ExtResource("1_nfeox")
+center_texture = ExtResource("2_aw4cw")
+horizontal_texture = ExtResource("2_nfeox")
+tip_texture = ExtResource("4_3el85")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1333641113]
 texture = ExtResource("2_nfeox")
@@ -18,7 +23,7 @@ texture = ExtResource("2_nfeox")
 shape = SubResource("RectangleShape2D_ec6vt")
 
 [node name="Timer" type="Timer" parent="." unique_id=1902121334]
-wait_time = 0.6
+wait_time = 6.884
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

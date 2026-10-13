@@ -16,7 +16,7 @@ const DIRECTIONS := [
 	Vector2i.DOWN
 ]
 
-var explosion_range := 2
+var explosion_range := 1
 @onready var burning_bush_tscn = preload("res://scenes/burning_bush.tscn")
 
 
@@ -76,7 +76,7 @@ func get_explosion_cells(origin: Vector2i) -> Array[Vector2i]:
 	var explosions_cells: Array[Vector2i] = [origin]
 	
 	for direction in DIRECTIONS:
-		for i in range(explosion_range):
+		for i in range(1, explosion_range + 1):
 			var cell = origin + direction * i
 			
 			if is_explosion_blocked(cell):

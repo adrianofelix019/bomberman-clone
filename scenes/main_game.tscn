@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cupc74ivt3x7a" path="res://tile_map_layer.gd" id="5_ipu61"]
 [ext_resource type="Texture2D" uid="uid://dm3ic30kc30uf" path="res://assets/temp/bush.png" id="5_ygxny"]
 [ext_resource type="Texture2D" uid="uid://i18apw6bufq" path="res://assets/temp/bush-on-fire.png" id="6_wi4c7"]
+[ext_resource type="Texture2D" uid="uid://bb7f5p2ksq1u3" path="res://assets/temp/fire.png" id="7_70vka"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ygxny"]
 
@@ -35,6 +36,10 @@ texture = ExtResource("5_ygxny")
 texture = ExtResource("6_wi4c7")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2l77h"]
+texture = ExtResource("7_70vka")
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_ec6vt"]
 physics_layer_0/collision_layer = 1
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_ygxny")
@@ -43,6 +48,7 @@ sources/1 = SubResource("TileSetAtlasSource_ipu61")
 sources/2 = SubResource("TileSetAtlasSource_ygxny")
 sources/3 = SubResource("TileSetAtlasSource_wi4c7")
 sources/4 = SubResource("TileSetAtlasSource_70vka")
+sources/5 = SubResource("TileSetAtlasSource_2l77h")
 
 [node name="MainGame" type="Node2D" unique_id=1607514451]
 script = ExtResource("1_ipu61")

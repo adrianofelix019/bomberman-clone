@@ -11,7 +11,7 @@ var bloodthirsty_scene := preload("res://scenes/bloodthirsty.tscn")
 var smart_enemy_scene := preload("res://scenes/smart_enemy.tscn")
 
 const ENEMY_COUNT := 5
-const MIN_ENEMY_DISTANCE := 3
+const MIN_ENEMY_DISTANCE := 4
 
 
 func _ready() -> void:
