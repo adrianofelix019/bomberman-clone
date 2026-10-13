@@ -39,28 +39,32 @@ func create_explosion_at(
 ) -> void:
 	var new_explosion = EXPLOSION_SCENE.instantiate()
 	new_explosion.position = tile_map.map_to_local(cell)
-	
+
 	var current_sprite: Sprite2D = new_explosion.get_node("Sprite")
-	
+
 	if cell == origin:
 		current_sprite.texture = center_texture
+		current_sprite.rotation = 0.0
 	else:
 		var direction := Vector2i(
 			sign(cell.x - origin.x),
 			sign(cell.y - origin.y)
 		)
+
 		var next_cell := cell + direction
 		var is_tip := not visible_cells.has(next_cell)
-		
+
 		if is_tip:
 			current_sprite.texture = tip_texture
 			current_sprite.rotation = Vector2(direction).angle()
 		else:
 			current_sprite.texture = horizontal_texture
-	
-		if direction.y != 0:
-			current_sprite.rotation = PI / 2.0
-	
+
+			if direction.y != 0:
+				current_sprite.rotation_degrees = 90
+			else:
+				current_sprite.rotation_degrees = 0
+
 	get_parent().add_child(new_explosion)
 
 
