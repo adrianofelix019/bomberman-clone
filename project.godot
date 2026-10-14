@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Bomberman Clone"
+config/name="Bomberguy"
 run/main_scene="uid://c06547vlhly7c"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
