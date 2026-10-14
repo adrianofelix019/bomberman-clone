@@ -1,10 +1,34 @@
 [gd_scene format=3 uid="uid://dwgkcn1q65034"]
 
 [ext_resource type="Script" uid="uid://b51lccwe4f245" path="res://scripts/bomber_guy.gd" id="1_6id5c"]
-[ext_resource type="Texture2D" uid="uid://cn3sto06ti3at" path="res://assets/temp/char.png" id="2_8tdku"]
+[ext_resource type="Texture2D" uid="uid://cylwi232kpq6v" path="res://assets/temp/char-export.png" id="2_6id5c"]
+[ext_resource type="Texture2D" uid="uid://bqtow5hboikcb" path="res://assets/temp/char-export1.png" id="3_dijjm"]
+[ext_resource type="Texture2D" uid="uid://c7kva5ec3d8ts" path="res://assets/temp/char-export2.png" id="4_gea43"]
+[ext_resource type="Texture2D" uid="uid://dicxl31bkr7ou" path="res://assets/temp/char-export3.png" id="5_eog2b"]
+[ext_resource type="Texture2D" uid="uid://ke3ut4sve0re" path="res://assets/temp/char-export4.png" id="6_kgcn0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
 size = Vector2(8, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ec6vt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_dijjm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gea43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_eog2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kgcn0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BomberGuy" type="CharacterBody2D" unique_id=421491110 groups=["player"]]
 z_index = 2
@@ -13,10 +37,16 @@ collision_mask = 11
 script = ExtResource("1_6id5c")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1102614886]
-position = Vector2(2.9802322e-08, -0.50000006)
-scale = Vector2(0.49999997, 0.81249994)
-texture = ExtResource("2_8tdku")
+visible = false
+position = Vector2(1.1324883e-06, -1.0000002)
+scale = Vector2(1.125, 1.1249999)
+texture = ExtResource("2_6id5c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1432681212]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_ec6vt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339783779]
+sprite_frames = SubResource("SpriteFrames_ec6vt")
+frame = 1
+frame_progress = 0.32274032

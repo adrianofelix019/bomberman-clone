@@ -33,6 +33,11 @@ func move(delta: float) -> void:
 		"ui_up",
 		"ui_down"
 	)
+	
+	if direction != Vector2.ZERO:
+		$AnimatedSprite2D.play("default")
+	else:
+		$AnimatedSprite2D.stop()
 
 	velocity = direction * SPEED
 
