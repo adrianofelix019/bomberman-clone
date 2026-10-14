@@ -16,7 +16,7 @@ const DIRECTIONS := [
 	Vector2i.DOWN
 ]
 
-var explosion_range := 5
+@export var explosion_range := 1
 @onready var burning_bush_tscn = preload("res://scenes/burning_bush.tscn")
 
 

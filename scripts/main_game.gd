@@ -10,8 +10,8 @@ var enemy_scene := preload("res://scenes/enemy.tscn")
 var bloodthirsty_scene := preload("res://scenes/bloodthirsty.tscn")
 var smart_enemy_scene := preload("res://scenes/smart_enemy.tscn")
 
-const ENEMY_COUNT := 5
-const MIN_ENEMY_DISTANCE := 4
+@export var enemy_amount := 5
+@export var min_enemy_distance := 4
 
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func spawn_bomber_guy() -> void:
 
 
 func spawn_enemy() -> void:
-	for enemy_count in ENEMY_COUNT:
+	for enemy_count in enemy_amount:
 		var enemy: CharacterBody2D = enemy_scene.instantiate()
 		var random_cell := get_random_free_cell()
 		
@@ -90,7 +90,7 @@ func get_random_free_cell() -> Vector2i:
 		
 		var distance = abs(cell.x - player_cell.x) + abs(cell.y - player_cell.y)
 		
-		if distance <= MIN_ENEMY_DISTANCE:
+		if distance <= min_enemy_distance:
 			continue
 		
 		if cell in enemy_cells:
