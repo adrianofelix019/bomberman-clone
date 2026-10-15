@@ -34,8 +34,14 @@ func move(delta: float) -> void:
 		"ui_down"
 	)
 	
-	if direction != Vector2.ZERO:
-		$AnimatedSprite2D.play("default")
+	if direction == Vector2.RIGHT:
+		$AnimatedSprite2D.play("side-walk")
+		$AnimatedSprite2D.flip_h = false
+	elif direction == Vector2.LEFT:
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("side-walk")
+	elif direction == Vector2.UP:
+		$AnimatedSprite2D.play("back-walk")
 	else:
 		$AnimatedSprite2D.stop()
 

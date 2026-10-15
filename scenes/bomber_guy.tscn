@@ -3,15 +3,36 @@
 [ext_resource type="Script" uid="uid://b51lccwe4f245" path="res://scripts/bomber_guy.gd" id="1_6id5c"]
 [ext_resource type="Texture2D" uid="uid://cylwi232kpq6v" path="res://assets/temp/char-export.png" id="2_6id5c"]
 [ext_resource type="Texture2D" uid="uid://bqtow5hboikcb" path="res://assets/temp/char-export1.png" id="3_dijjm"]
+[ext_resource type="Texture2D" uid="uid://8q7v8kvrd6if" path="res://assets/temp/char-back1.png" id="3_gdosd"]
+[ext_resource type="Texture2D" uid="uid://cvevxijckk4g0" path="res://assets/temp/char-back2.png" id="4_1an7i"]
 [ext_resource type="Texture2D" uid="uid://c7kva5ec3d8ts" path="res://assets/temp/char-export2.png" id="4_gea43"]
 [ext_resource type="Texture2D" uid="uid://dicxl31bkr7ou" path="res://assets/temp/char-export3.png" id="5_eog2b"]
+[ext_resource type="Texture2D" uid="uid://b53bvvkpn24vt" path="res://assets/temp/char-back3.png" id="5_pmfsl"]
 [ext_resource type="Texture2D" uid="uid://ke3ut4sve0re" path="res://assets/temp/char-export4.png" id="6_kgcn0"]
+[ext_resource type="Texture2D" uid="uid://drfiyl7fqum7a" path="res://assets/temp/char-back4.png" id="6_ysobg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
 size = Vector2(8, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ec6vt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gdosd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1an7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pmfsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ysobg")
+}],
+"loop": 1,
+"name": &"back-walk",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_dijjm")
@@ -26,7 +47,7 @@ animations = [{
 "texture": ExtResource("6_kgcn0")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"side-walk",
 "speed": 5.0
 }]
 
@@ -48,5 +69,5 @@ shape = SubResource("RectangleShape2D_ec6vt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339783779]
 sprite_frames = SubResource("SpriteFrames_ec6vt")
-frame = 1
-frame_progress = 0.32274032
+animation = &"back-walk"
+frame_progress = 0.14655241
