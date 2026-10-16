@@ -42,6 +42,8 @@ func move(delta: float) -> void:
 		$AnimatedSprite2D.play("side-walk")
 	elif direction == Vector2.UP:
 		$AnimatedSprite2D.play("back-walk")
+	elif direction == Vector2.DOWN:
+		$AnimatedSprite2D.play("front-walk")
 	else:
 		$AnimatedSprite2D.stop()
 
@@ -64,7 +66,6 @@ func update_player_cell() -> void:
 
 func get_player_cell() -> Vector2i:
 	var tile_map_position := tile_map.to_local(global_position)
-
 	return tile_map.local_to_map(tile_map_position)
 
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgaebqqnf76u5"
-path="res://.godot/imported/breakable.png-c0098b55c972177af4df42d5f29704de.ctex"
+uid="uid://45omtwn5p6lk"
+path="res://.godot/imported/front-walk4.png-261462950e3711156c870cb9244cdcbc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temp/breakable.png"
-dest_files=["res://.godot/imported/breakable.png-c0098b55c972177af4df42d5f29704de.ctex"]
+source_file="res://assets/temp/front-walk/front-walk4.png"
+dest_files=["res://.godot/imported/front-walk4.png-261462950e3711156c870cb9244cdcbc.ctex"]
 
 [params]
 

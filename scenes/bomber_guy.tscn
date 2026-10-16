@@ -3,13 +3,17 @@
 [ext_resource type="Script" uid="uid://b51lccwe4f245" path="res://scripts/bomber_guy.gd" id="1_6id5c"]
 [ext_resource type="Texture2D" uid="uid://cylwi232kpq6v" path="res://assets/temp/char-export.png" id="2_6id5c"]
 [ext_resource type="Texture2D" uid="uid://bqtow5hboikcb" path="res://assets/temp/char-export1.png" id="3_dijjm"]
-[ext_resource type="Texture2D" uid="uid://8q7v8kvrd6if" path="res://assets/temp/char-back1.png" id="3_gdosd"]
-[ext_resource type="Texture2D" uid="uid://cvevxijckk4g0" path="res://assets/temp/char-back2.png" id="4_1an7i"]
+[ext_resource type="Texture2D" uid="uid://u8e11o1fqs6t" path="res://assets/temp/back-walk/back-walk1.png" id="3_ref2a"]
+[ext_resource type="Texture2D" uid="uid://srq30yxnnvmv" path="res://assets/temp/back-walk/back-walk2.png" id="4_36a6y"]
 [ext_resource type="Texture2D" uid="uid://c7kva5ec3d8ts" path="res://assets/temp/char-export2.png" id="4_gea43"]
+[ext_resource type="Texture2D" uid="uid://hkuf1v6wve6a" path="res://assets/temp/back-walk/back-walk3.png" id="5_02rx3"]
 [ext_resource type="Texture2D" uid="uid://dicxl31bkr7ou" path="res://assets/temp/char-export3.png" id="5_eog2b"]
-[ext_resource type="Texture2D" uid="uid://b53bvvkpn24vt" path="res://assets/temp/char-back3.png" id="5_pmfsl"]
+[ext_resource type="Texture2D" uid="uid://djadwx3m1g4op" path="res://assets/temp/back-walk/back-walk4.png" id="6_idrx1"]
 [ext_resource type="Texture2D" uid="uid://ke3ut4sve0re" path="res://assets/temp/char-export4.png" id="6_kgcn0"]
-[ext_resource type="Texture2D" uid="uid://drfiyl7fqum7a" path="res://assets/temp/char-back4.png" id="6_ysobg"]
+[ext_resource type="Texture2D" uid="uid://dl83h0r4pkiil" path="res://assets/temp/front-walk/front-walk1.png" id="7_ref2a"]
+[ext_resource type="Texture2D" uid="uid://b18iw0bup1ibg" path="res://assets/temp/front-walk/front-walk2.png" id="8_36a6y"]
+[ext_resource type="Texture2D" uid="uid://c70h845dq5tta" path="res://assets/temp/front-walk/front-walk3.png" id="9_02rx3"]
+[ext_resource type="Texture2D" uid="uid://45omtwn5p6lk" path="res://assets/temp/front-walk/front-walk4.png" id="10_idrx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ec6vt"]
 size = Vector2(8, 13)
@@ -18,19 +22,36 @@ size = Vector2(8, 13)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_gdosd")
+"texture": ExtResource("3_ref2a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_1an7i")
+"texture": ExtResource("4_36a6y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_pmfsl")
+"texture": ExtResource("5_02rx3")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ysobg")
+"texture": ExtResource("6_idrx1")
 }],
 "loop": 1,
 "name": &"back-walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ref2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_36a6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_02rx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_idrx1")
+}],
+"loop": 1,
+"name": &"front-walk",
 "speed": 5.0
 }, {
 "frames": [{
@@ -70,4 +91,3 @@ shape = SubResource("RectangleShape2D_ec6vt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=339783779]
 sprite_frames = SubResource("SpriteFrames_ec6vt")
 animation = &"back-walk"
-frame_progress = 0.14655241
